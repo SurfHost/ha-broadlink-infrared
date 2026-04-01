@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Broadlink IR Emitter",
+        "description": "Select a Broadlink remote to expose as an infrared emitter. Found {count} Broadlink remote(s).",
+        "data": {
+          "broadlink_entity_id": "Broadlink Remote"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This Broadlink remote is already configured as an IR emitter.",
+      "no_broadlink_remotes": "No Broadlink remote entities found. Please set up the Broadlink integration first."
+    }
+  }
+}
