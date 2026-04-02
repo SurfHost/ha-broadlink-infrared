@@ -1,10 +1,10 @@
 {
   "domain": "broadlink_infrared",
   "name": "Broadlink Infrared Emitter",
-  "version": "0.2.0",
-  "documentation": "https://github.com/your-repo/broadlink_infrared",
+  "version": "0.3.0",
+  "documentation": "https://github.com/SurfHost/ha-broadlink-infrared",
   "dependencies": ["broadlink", "infrared"],
-  "codeowners": [],
+  "codeowners": ["@SurfHost"],
   "config_flow": true,
   "iot_class": "local_push",
   "integration_type": "device"
