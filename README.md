@@ -34,24 +34,7 @@ Home Assistant 2026.4 introduced a native `infrared` entity platform that decoup
 
 ## Architecture
 
-```
-Consumer Integration (e.g., LG Infrared, Infrared Remote)
-        |
-        | sends InfraredCommand
-        v
-[HA infrared domain]
-        |
-        v
-BroadlinkInfraredEntity (this integration)
-        |
-        | converts raw timings to Broadlink packet format
-        v
-Broadlink remote entity (standard broadlink integration)
-        |
-        | WiFi
-        v
-Broadlink RM4 Pro --> IR LED --> TV / AC / etc.
-```
+![Architecture diagram](architecture.svg)
 
 ## Multiple devices
 
