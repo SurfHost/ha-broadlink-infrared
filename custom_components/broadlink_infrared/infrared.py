@@ -8,6 +8,7 @@ import logging
 from homeassistant.components.infrared import InfraredCommand, InfraredEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
@@ -57,7 +58,7 @@ class BroadlinkInfraredEntity(InfraredEntity):
             name=f"{device_name} IR Emitter",
             manufacturer="Broadlink",
             model="RM4 Pro",
-            sw_version="0.3.2",
+            sw_version="0.3.3",
             via_device=None,
         )
 
@@ -73,14 +74,22 @@ class BroadlinkInfraredEntity(InfraredEntity):
         packet = infrared_command_to_broadlink_packet(command)
         b64_packet = base64.b64encode(packet).decode("ascii")
 
-        await self.hass.services.async_call(
-            "remote",
-            "send_command",
-            {
-                "entity_id": self._broadlink_entity_id,
-                "command": [f"b64:{b64_packet}"],
-            },
-            blocking=True,
-        )
+        try:
+            await self.hass.services.async_call(
+                "remote",
+                "send_command",
+                {
+                    "entity_id": self._broadlink_entity_id,
+                    "command": [f"b64:{b64_packet}"],
+                },
+                blocking=True,
+            )
+        except HomeAssistantError as err:
+            _LOGGER.error(
+                "Failed to send IR command via %s: %s",
+                self._broadlink_entity_id,
+                err,
+            )
+            raise
 
         _LOGGER.debug("IR command sent successfully via %s", self._broadlink_entity_id)
