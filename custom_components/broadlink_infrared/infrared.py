@@ -58,7 +58,7 @@ class BroadlinkInfraredEntity(InfraredEntity):
             name=f"{device_name} IR Emitter",
             manufacturer="Broadlink",
             model="RM4 Pro",
-            sw_version="0.3.3",
+            sw_version="0.3.4",
             via_device=None,
         )
 
