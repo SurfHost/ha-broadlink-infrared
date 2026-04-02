@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Removed unused constants (`CONF_BROADLINK_DEVICE`, `BROADLINK_REPEAT_MARKER`, `DEFAULT_IR_FREQUENCY_KHZ`)
+- Linked LG Infrared to HA integration docs in README
+- Updated architecture diagram
 
 ## [0.3.2] - 2026-04-02
 

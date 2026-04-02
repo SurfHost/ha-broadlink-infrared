@@ -10,7 +10,7 @@ Home Assistant 2026.4 introduced a native `infrared` entity platform that decoup
 
 **Before (old way):** Manually learn IR codes, create scripts, call `remote.send_command` with device/command names. Lots of YAML.
 
-**After (with this integration):** Your Broadlink RM4 Pro shows up as an IR emitter. Consumer integrations like `lg_infrared` or [Infrared Remote](https://github.com/SurfHost/ha-infrared-remote) can use it directly. Your TV appears as a proper `media_player` entity.
+**With this integration:** Your Broadlink universal remote shows up as an IR emitter. Integrations like [LG Infrared](https://www.home-assistant.io/integrations/lg_infrared/) or my [Infrared Remote](https://github.com/SurfHost/ha-infrared-remote) can use it directly. Your TV appears as a proper `media_player` entity.
 
 ## Requirements
 
@@ -43,5 +43,5 @@ Set up this integration multiple times for multiple Broadlink RM devices (e.g., 
 ## Limitations
 
 - **Transmit only**: The new infrared platform currently supports sending only, not receiving/learning
-- **Consumer integrations needed**: Works with integrations that use the new infrared platform (like `lg_infrared` or Infrared Remote)
+- **Consumer integrations needed**: Works with integrations that use the new infrared platform (like [LG Infrared](https://www.home-assistant.io/integrations/lg_infrared/) or Infrared Remote)
 - **Assumed state**: IR is one-way, so state tracking is assumed
