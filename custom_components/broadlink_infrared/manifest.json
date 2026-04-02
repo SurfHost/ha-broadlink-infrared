@@ -1,7 +1,7 @@
 {
   "domain": "broadlink_infrared",
   "name": "Broadlink Infrared Emitter",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "documentation": "https://github.com/SurfHost/ha-broadlink-infrared",
   "dependencies": ["broadlink", "infrared"],
   "codeowners": ["@SurfHost"],
