@@ -34,7 +34,7 @@ Home Assistant 2026.4 introduced a native `infrared` entity platform that decoup
 
 ## Architecture
 
-![Architecture diagram](architecture.svg)
+![Architecture diagram](https://raw.githubusercontent.com/SurfHost/ha-broadlink-infrared/main/architecture.svg)
 
 ## Multiple devices
 
