@@ -55,10 +55,10 @@ class BroadlinkInfraredEntity(InfraredEntity):
         self._attr_unique_id = f"{config_entry.entry_id}_infrared"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, config_entry.entry_id)},
-            name=f"{device_name} IR Emitter",
+            name=device_name,
             manufacturer="Broadlink",
             model="RM4 Pro",
-            sw_version="0.3.5",
+            sw_version="0.3.6",
             via_device=None,
         )
 
